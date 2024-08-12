@@ -37,3 +37,22 @@ console.log("add7: " + add7(7))
 console.log("multiply: " + multiply(7, 7))
 console.log("capitalize: " + capitalize("BoTh"))
 console.log("lastLetter: " + lastLetter("abcd"))
+
+
+function fizzBuzz() {
+    let answer = parseInt(prompt("Please enter the number you would like to FizzBuzz up to: "))
+
+    for (let i = 1; i <= answer; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            console.log("FizzBuzz")
+        } else if (i % 3 == 0) {
+            console.log("Fizz")
+        } else if (i % 5 == 0) {
+            console.log("Buzz")
+        } else {
+        console.log(i);
+        }
+    }
+}
+
+fizzBuzz()
