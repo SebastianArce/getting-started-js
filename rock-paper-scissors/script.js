@@ -49,21 +49,34 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
+function displayScore() {
+    divScoreHuman.textContent = `Human Score: ${humanScore}`
+    divScoreComputer.textContent = `Computer Score: ${computerScore}`
+
+    divScore.appendChild(divScoreHuman)
+    divScore.appendChild(divScoreComputer)
+}
+
 function playGame(e) {
     let humanChoice = e.target.id
     let computerChoice = getComputerChoice()
 
     playRound(humanChoice, computerChoice)
     console.log(`Marker: Computer: ${computerScore}, You: ${humanScore}`)
+    displayScore()
 }
+
 
 
 let rock = document.querySelector("#rock")
 let scissors = document.querySelector("#scissors")
 let paper = document.querySelector("#paper")
 
+let divScore = document.querySelector(".score")
+let divScoreHuman = document.createElement("p")
+let divScoreComputer = document.createElement("p")
+
 rock.addEventListener("click", playGame)
 scissors.addEventListener("click", playGame)
 paper.addEventListener("click", playGame)
-
 
