@@ -49,16 +49,21 @@ function playRound(humanChoice, computerChoice) {
     }
 }
 
-function playGame() {
-    for (let i = 0; i < 5; i++) {
-        let computerChoice = getComputerChoice()
-        let humanChoice = getHumanChoice()
+function playGame(e) {
+    let humanChoice = e.target.id
+    let computerChoice = getComputerChoice()
 
-        playRound(humanChoice, computerChoice)
-
-        console.log(`Marker: Computer: ${computerScore}, You: ${humanScore}`)
-    }
+    playRound(humanChoice, computerChoice)
+    console.log(`Marker: Computer: ${computerScore}, You: ${humanScore}`)
 }
 
 
-playGame()
+let rock = document.querySelector("#rock")
+let scissors = document.querySelector("#scissors")
+let paper = document.querySelector("#paper")
+
+rock.addEventListener("click", playGame)
+scissors.addEventListener("click", playGame)
+paper.addEventListener("click", playGame)
+
+
