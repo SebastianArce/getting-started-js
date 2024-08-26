@@ -6,11 +6,14 @@ html.style.margin = 0;
 body.style.margin = 0;
 body.style.display = "flex";
 body.style.flexDirection = "column"
+body.style.justifyContent = "space-between"
+body.style.height = "100vh";
+// body.style.fontFamily = "Helvetica" 
 
 container.style.display = "flex";
 container.style.flexDirection = "column";
 container.style.backgroundColor = "#F7F3E3";
-container.style.width = "60%"
+container.style.width = "50%"
 container.style.alignSelf = "center"
 container.style.margin = "30px"
 
@@ -37,7 +40,6 @@ function addMenu() {
 
   title = document.createElement("span")
   title.textContent = "L'Ecran Magique"
-  title.style.fontFamily = "Helvetica" 
   title.style.fontWeight = 700
   menu.appendChild(title)
 
@@ -46,7 +48,6 @@ function addMenu() {
   btn.style.padding = "3px 10px";
   btn.style.borderRadius = "5px";
   btn.style.cursor = "pointer";
-  btn.style.fontFamily = "Helvetica" 
   btn.textContent = "New grid";
   menu.append(btn);
   body.prepend(menu);
@@ -81,9 +82,18 @@ function createGrid(gridDimension = 16) {
   }
 }
 
+function addFooter() {
+    footer = document.createElement("div")
+    footer.style.display = "flex"
+    footer.style.justifyContent = "center"
+    footer.textContent = "@ 2024 by Sebastian A."
+    body.appendChild(footer)
+}
+
 function main() {
     addMenu();
     createGrid();
+    addFooter();
 }
 
 main()
