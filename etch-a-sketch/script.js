@@ -1,7 +1,6 @@
 let container = document.querySelector(".container");
 let html = document.querySelector("html");
 let body = document.querySelector("body");
-let hoverColor = "#2B2118";
 
 html.style.margin = 0;
 body.style.margin = 0;
@@ -25,7 +24,15 @@ function createGrid(gridDimension) {
     box.style.aspectRatio = 1 / 1;
     box.style.backgroundColor = "#AF9164";
     container.appendChild(box);
+
+    box.addEventListener("mouseover", () => {
+        box.style.backgroundColor = "#2B2118"
+    })
   }
+}
+
+function draw() {
+
 }
 
 const gridDimension = 16;
