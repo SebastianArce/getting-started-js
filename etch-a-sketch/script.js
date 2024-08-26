@@ -32,13 +32,21 @@ function addMenu() {
   menu = document.createElement("div");
   menu.style.backgroundColor = "#F7F3E3";
   menu.style.display = "flex";
-  menu.style.justifyContent = "center";
+  menu.style.justifyContent = "space-around";
+  menu.style.alignItems = "center"
+
+  title = document.createElement("span")
+  title.textContent = "L'Ecran Magique"
+  title.style.fontFamily = "Helvetica" 
+  title.style.fontWeight = 700
+  menu.appendChild(title)
 
   btn = document.createElement("button");
   btn.style.margin = "10px";
   btn.style.padding = "3px 10px";
   btn.style.borderRadius = "5px";
   btn.style.cursor = "pointer";
+  btn.style.fontFamily = "Helvetica" 
   btn.textContent = "New grid";
   menu.append(btn);
   body.prepend(menu);
