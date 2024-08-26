@@ -4,11 +4,15 @@ let body = document.querySelector("body");
 
 html.style.margin = 0;
 body.style.margin = 0;
+body.style.display = "flex";
+body.style.flexDirection = "column"
 
 container.style.display = "flex";
 container.style.flexDirection = "column";
-container.style.gap = "1vw";
 container.style.backgroundColor = "#F7F3E3";
+container.style.width = "60%"
+container.style.alignSelf = "center"
+container.style.margin = "30px"
 
 function resetGrid() {
   let newGridDimension = window.prompt(
@@ -44,13 +48,12 @@ function addMenu() {
 
 function createGrid(gridDimension = 16) {
   console.log("creating new grid");
-  let boxWidth = Math.floor(100 / gridDimension);
+  let boxWidth = 100 / gridDimension;
 
   for (let i = 0; i < gridDimension; i++) {
     let row = document.createElement("div");
     row.style.display = "flex";
-    row.style.justifyContent = "space-around";
-    row.style.gap = "1vw";
+    row.style.flexBasis = 1
 
     for (let j = 0; j < gridDimension; j++) {
       // add boxes to row
@@ -58,6 +61,8 @@ function createGrid(gridDimension = 16) {
       box.style.width = `${boxWidth}%`;
       box.style.aspectRatio = 1 / 1;
       box.style.backgroundColor = "#AF9164";
+      box.style.border = "thin solid #96705B"
+      box.style
       row.appendChild(box);
 
       box.addEventListener("mouseover", () => {
