@@ -7,8 +7,10 @@
 </head>
 <body>
     <form action="#" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required placeholder="Bob Marley"><br><br>
+        <fieldset>
+            <legend>Personal Information</legend>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required placeholder="Bob Marley"><br><br>
         
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required placeholder=""><br><br>
@@ -21,9 +23,24 @@
 
         <label for="dob">Date of Birth:</label>
         <input type="date" id="dob" name="dob" required><br><br>
+
+        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea><br><br>
         
+        <select name="country" id="country">
+            <option value="usa">USA</option>
+            <option value="canada">Canada</option>
+            <option value="uk">UK</option>
+        </select><br><br>
+
+        <div>
+            <label for="terms">
+                <input type="checkbox" id="terms" name="terms" required>
+                I agree to the terms and conditions
+            </label>
+        </div>
 
         <input type="submit" value="Submit">
+    </fieldset>
     </form>
 </body>
 </html>
