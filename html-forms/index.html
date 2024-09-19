@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forms</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <form action="#" method="post">
@@ -12,35 +13,33 @@
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required placeholder="Bob Marley"><br><br>
         
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required placeholder=""><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required placeholder=""><br><br>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required placeholder="bobmarley@gmail.com"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="bobmarley@gmail.com"><br><br>
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" required placeholder="1234567890"><br><br>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required placeholder="1234567890"><br><br>
 
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" required><br><br>
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required><br><br>
 
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea><br><br>
-        
-        <select name="country" id="country">
-            <option value="usa">USA</option>
-            <option value="canada">Canada</option>
-            <option value="uk">UK</option>
-        </select><br><br>
+            <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"></textarea><br><br>
+            
+            <select name="country" id="country">
+                <option value="usa">USA</option>
+                <option value="canada">Canada</option>
+                <option value="uk">UK</option>
+            </select><br><br>
 
-        <div>
-            <label for="terms">
+            <div class="checkbox-container">
                 <input type="checkbox" id="terms" name="terms" required>
-                I agree to the terms and conditions
-            </label>
-        </div>
+                <label for="terms">I agree to the terms and conditions</label>
+            </div>
 
-        <input type="submit" value="Submit">
-    </fieldset>
+            <input type="submit" value="Submit">
+        </fieldset>
     </form>
 </body>
 </html>
