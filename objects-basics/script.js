@@ -16,8 +16,7 @@ filterArray = array.filter(isEven).map(tripleNumber).reduce(sumAllNumbers);
 
 console.log(filterArray);
 
-
-// Instance of the object
+// Object constructors
 function Player(name, team) {
   this.name = name;
   this.team = team;
@@ -26,6 +25,7 @@ function Player(name, team) {
   }
 }
 
+// Instance of the player object
 let player1 = new Player('RonaldoJ', 'Juventus');
 console.log(player1.sayName());
 
@@ -46,5 +46,31 @@ function Book(title, author, pages, read) {
   }
 }
 
+// Instances of the book object
 let book1 = new Book("The Hobbit", "J.R.R. Tolkien", 295, true)
+let book2 = new Book("Man's Search for Meaning", "Viktor Frankl", 200, true)
 console.log(book1.info())
+console.log(book2.info())
+
+// Prototype inheritance
+console.log(Object.getPrototypeOf(book1) === Book.prototype)
+
+// We can also use object literals, but obviously is not as flexible
+book1 = {
+  "title": "The Hobbit",
+  author: "J.R.R. Tolkien",
+  "pages": 295,
+  "read": true,
+  "info": function() {
+    infoMessage = `${this.title} by ${this.author}, ${this.pages} pages`
+    if (this.read) {
+      infoMessage += ", already read"
+    } else {
+      infoMessage += ", not read yet"
+    }
+    return infoMessage
+  }
+};
+
+console.log(book1.info())
+console.log(book1.title)
