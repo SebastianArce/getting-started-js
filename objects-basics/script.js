@@ -77,7 +77,7 @@ console.log(book1.title)
 
 // We can also use factory functions
 function createUser(name) {
-  userName = "tf-" + name;
+  let userName = "tf-" + name;
   return {
     name, userName
   }
@@ -85,3 +85,19 @@ function createUser(name) {
 
 user1 = createUser("John")
 console.log(user1)
+
+// Private variables and functions using factory functions
+function createUser(name) {
+  let userName = "tf-" + name;
+
+  let reputation = 0;
+  const getReputation = () => reputation;
+  const giveReputation = () => reputation++;
+
+  return {name, userName, getReputation, giveReputation}
+}
+
+user1 = createUser("Nick")
+user1.giveReputation()
+user1.giveReputation()
+console.log(user1.getReputation())
