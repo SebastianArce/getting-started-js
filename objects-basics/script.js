@@ -74,3 +74,14 @@ book1 = {
 
 console.log(book1.info())
 console.log(book1.title)
+
+// We can also use factory functions
+function createUser(name) {
+  userName = "tf-" + name;
+  return {
+    name, userName
+  }
+}
+
+user1 = createUser("John")
+console.log(user1)
