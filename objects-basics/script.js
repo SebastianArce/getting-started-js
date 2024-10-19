@@ -101,3 +101,18 @@ user1 = createUser("Nick")
 user1.giveReputation()
 user1.giveReputation()
 console.log(user1.getReputation())
+
+// Prototypal inheritance with factory functions
+function createPlayer(name, level) {
+  const { getReputation, giveReputation }  = createUser(name);
+
+  const increaseLevel = () => level++;
+  const getLevel = () => level;
+  return {name, getReputation, giveReputation, increaseLevel, getLevel}
+}
+
+player1 = createPlayer("John", 1)
+player1.giveReputation()
+player1.increaseLevel()
+player1.increaseLevel()
+console.log(player1.getReputation(), player1.name, player1.getLevel())
