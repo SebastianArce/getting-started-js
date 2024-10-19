@@ -115,4 +115,21 @@ player1 = createPlayer("John", 1)
 player1.giveReputation()
 player1.increaseLevel()
 player1.increaseLevel()
-console.log(player1.getReputation(), player1.name, player1.getLevel())
+console.log(player1.getReputation(), player1.name, player1.getLevel(), player1.userName) // userName is undefined
+
+// Extend objects
+function createSecondPlayer(name, level) {
+  const user = createUser(name);
+
+  const increaseLevel = () => level++;
+  const getLevel = () => level;
+  return Object.assign({}, user, {increaseLevel, getLevel});
+}
+
+player1 = createSecondPlayer("John", 1)
+player1.giveReputation()
+player1.increaseLevel()
+player1.increaseLevel()
+console.log(player1.getReputation(), player1.name, player1.getLevel(), player1.userName) // userName is defined
+
+// Note: function declarations are hoisted, but function expressions are not
